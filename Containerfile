@@ -11,6 +11,7 @@ RUN rpm-ostree override remove \
 
 RUN rpm-ostree -y install \
 	emacs \
+	git-absorb \
 	git-email \
 	isync \
 	msmtp \
