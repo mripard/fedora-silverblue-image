@@ -10,10 +10,12 @@ RUN rpm-ostree override remove \
 	firefox-langpacks
 
 RUN rpm-ostree -y install \
+	b4 \
 	emacs \
 	git-absorb \
 	git-email \
 	isync \
+	lei \
 	msmtp \
 	neomutt \
 	picocom \
