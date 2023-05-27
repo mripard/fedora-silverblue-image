@@ -16,6 +16,7 @@ RUN rpm-ostree -y install \
 	isync \
 	msmtp \
 	neomutt \
+	picocom \
 	python3-pip \
 	ripgrep \
 	tailscale \
