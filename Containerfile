@@ -21,6 +21,7 @@ RUN rpm-ostree -y install \
 	picocom \
 	python3-pip \
 	ripgrep \
+	strace \
 	tailscale \
 	vim-enhanced
 
