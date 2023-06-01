@@ -4,6 +4,8 @@ FROM quay.io/fedora-ostree-desktops/silverblue:${FEDORA_MAJOR_VERSION}
 
 ARG FEDORA_MAJOR_VERSION
 
+COPY usr /usr
+
 RUN \
 	rpm-ostree install \
 		https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-${FEDORA_MAJOR_VERSION}.noarch.rpm \
@@ -35,6 +37,12 @@ RUN \
 		vim-enhanced \
 	&& \
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo \
+	&& \
+	sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf \
+	&& \
+	systemctl enable rpm-ostreed-automatic.timer \
+	&& \
+	systemctl enable flatpak-system-update.timer \
 	&& \
 	rm -rf \
 		/tmp/* \
