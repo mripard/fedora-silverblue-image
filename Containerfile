@@ -40,6 +40,6 @@ RUN \
 		/tmp/* \
 		/var/* \
 	&& \
-	rpm-ostree cleanup \
+	rpm-ostree cleanup -m \
 	&& \
 	ostree container commit
