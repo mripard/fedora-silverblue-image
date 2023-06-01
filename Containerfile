@@ -7,13 +7,12 @@ RUN wget -P /etc/udev/rules.d/ https://raw.githubusercontent.com/Nitrokey/libnit
 
 RUN rpm-ostree override remove \
 	firefox \
-	firefox-langpacks
+	firefox-langpacks \
+	opensc
 
 RUN rpm-ostree -y install \
 	b4 \
 	emacs \
-	git-absorb \
-	git-email \
 	isync \
 	lei \
 	msmtp \
