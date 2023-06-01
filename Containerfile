@@ -19,6 +19,7 @@ RUN rpm-ostree -y install \
 	neomutt \
 	picocom \
 	python3-pip \
+	restic \
 	ripgrep \
 	strace \
 	tailscale \
