@@ -3,7 +3,7 @@ name: Build and Publish Containers
 on:
   push:
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: '20 02 * * *'
 
 permissions:
   packages: write
