@@ -44,10 +44,6 @@ RUN \
 	&& \
 	systemctl enable flatpak-system-update.timer \
 	&& \
-	rm -rf \
-		/tmp/* \
-		/var/* \
-	&& \
 	rpm-ostree cleanup -m \
 	&& \
 	ostree container commit
