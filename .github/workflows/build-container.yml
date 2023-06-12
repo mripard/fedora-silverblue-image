@@ -22,8 +22,14 @@ jobs:
   build:
     name: Build and push image
     runs-on: ubuntu-22.04
+    container:
+      image: fedora:38
+      options: --privileged
 
     steps:
+    - name: Install Packages
+      run: sudo dnf install -y buildah
+
     - uses: actions/checkout@v2
 
     - name: Build Image
@@ -32,6 +38,8 @@ jobs:
       with:
         image: ${{ env.IMAGE_NAME }}
         tags: ${{ env.IMAGE_TAGS }}
+        extra-args: |
+          --isolation=chroot
         containerfiles: |
           ./Containerfile
 
