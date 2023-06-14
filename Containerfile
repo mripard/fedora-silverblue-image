@@ -38,6 +38,10 @@ RUN \
 		vim-enhanced \
 		wl-clipboard \
 	&& \
+	rpm-ostree -y install fedora-repos-rawhide \
+	&& \
+	rpm-ostree -y install --enablerepo=rawhide --uninstall gnupg gnupg \
+	&& \
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo \
 	&& \
 	sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf \
