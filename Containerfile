@@ -40,7 +40,7 @@ RUN \
 	&& \
 	rpm-ostree -y install fedora-repos-rawhide \
 	&& \
-	rpm-ostree -y install --enablerepo=rawhide --uninstall gnupg gnupg \
+	rpm-ostree -y install --enablerepo=rawhide --uninstall gnupg2 gnupg2 \
 	&& \
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo \
 	&& \
