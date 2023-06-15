@@ -36,6 +36,7 @@ RUN \
 		strace \
 		tailscale \
 		vim-enhanced \
+		wl-clipboard \
 	&& \
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo \
 	&& \
