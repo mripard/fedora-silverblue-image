@@ -24,6 +24,7 @@ RUN \
 	rpm-ostree -y install \
 		b4 \
 		emacs \
+		git-filter-repo \
 		isync \
 		lei \
 		msmtp \
