@@ -25,6 +25,7 @@ RUN \
 		b4 \
 		emacs \
 		git-filter-repo \
+		htop \
 		isync \
 		lei \
 		msmtp \
