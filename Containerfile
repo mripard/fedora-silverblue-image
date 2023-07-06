@@ -24,6 +24,7 @@ RUN \
 	rpm-ostree -y install \
 		b4 \
 		emacs \
+		dfu-util \
 		git-filter-repo \
 		htop \
 		isync \
