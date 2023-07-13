@@ -26,6 +26,7 @@ RUN \
 		emacs \
 		dfu-util \
 		git-filter-repo \
+		git-pull-request \
 		htop \
 		isync \
 		lei \
