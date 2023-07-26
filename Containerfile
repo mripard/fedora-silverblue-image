@@ -25,6 +25,7 @@ RUN \
 		b4 \
 		emacs \
 		dfu-util \
+		git \
 		git-filter-repo \
 		htop \
 		isync \
