@@ -25,6 +25,7 @@ RUN \
 		b4 \
 		containernetworking-plugins \
 		did \
+		distrobox \
 		emacs \
 		git \
 		git-filter-repo \
