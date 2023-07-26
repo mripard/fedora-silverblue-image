@@ -23,6 +23,7 @@ RUN \
 	&& \
 	rpm-ostree -y install \
 		b4 \
+		containernetworking-plugins \
 		emacs \
 		git \
 		git-filter-repo \
