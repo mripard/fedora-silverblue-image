@@ -24,7 +24,6 @@ RUN \
 	rpm-ostree -y install \
 		b4 \
 		emacs \
-		dfu-util \
 		git \
 		git-filter-repo \
 		htop \
@@ -32,7 +31,6 @@ RUN \
 		lei \
 		msmtp \
 		neomutt \
-		picocom \
 		podman-remote \
 		python3-pip \
 		restic \
