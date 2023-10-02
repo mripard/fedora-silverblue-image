@@ -26,7 +26,6 @@ RUN \
 		containernetworking-plugins \
 		did \
 		distrobox \
-		emacs \
 		git \
 		git-filter-repo \
 		htop \
