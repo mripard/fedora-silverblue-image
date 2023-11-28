@@ -27,6 +27,7 @@ RUN \
 		did \
 		distrobox \
 		git \
+		git-email \
 		git-filter-repo \
 		htop \
 		isync \
