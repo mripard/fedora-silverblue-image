@@ -34,6 +34,7 @@ RUN \
 		lei \
 		msmtp \
 		neomutt \
+		picocom \
 		podman-remote \
 		python3-pip \
 		restic \
