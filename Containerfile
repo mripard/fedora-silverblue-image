@@ -39,6 +39,7 @@ RUN \
 		picocom \
 		podman-remote \
 		python3-pip \
+		qemu \
 		restic \
 		ripgrep \
 		strace \
