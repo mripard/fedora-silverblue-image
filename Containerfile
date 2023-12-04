@@ -34,6 +34,8 @@ RUN \
 		lei \
 		msmtp \
 		neomutt \
+		osbuild \
+		osbuild-tools \
 		picocom \
 		podman-remote \
 		python3-pip \
