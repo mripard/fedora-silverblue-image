@@ -22,28 +22,63 @@ RUN \
 		firefox-langpacks \
 	&& \
 	rpm-ostree -y install \
+		autoconf \
+		automake \
 		b4 \
+		bison \
+		clang-devel \
+		coccinelle \
 		containernetworking-plugins \
+		cpio \
 		did \
 		distrobox \
+		dfu-util \
+		drm-utils \
+		dtc \
+		dwarves \
+		edid-decode \
+		elfutils-libelf-devel \
+		emacs \
+		flex \
+		gcc \
+		gcc-aarch64-linux-gnu \
+		gcc-arm-linux-gnu \
+		gcc-c++ \
 		git \
+		git-absorb \
 		git-email \
 		git-filter-repo \
 		htop \
 		isync \
 		lei \
+		lld \
+		make \
+		meson \
 		msmtp \
+		ncurses-devel \
 		neomutt \
+		openssl \
+		openssl-devel \
 		osbuild \
 		osbuild-tools \
+		patch \
 		picocom \
 		podman-remote \
+		python-cryptography \
+		python-devel \
+		python-jsonschema \
 		python3-pip \
+		python-pyelftools \
+		python-setuptools \
 		qemu \
 		restic \
 		ripgrep \
+		rpmdevtools \
 		strace \
+		swig \
 		tailscale \
+		uboot-tools \
+		v4l-utils \
 		vim-enhanced \
 		wireshark \
 		wl-clipboard \
