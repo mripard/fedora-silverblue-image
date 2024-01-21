@@ -80,6 +80,7 @@ RUN \
 		uboot-tools \
 		v4l-utils \
 		vim-enhanced \
+		w3m \
 		wireshark \
 		wl-clipboard \
 	&& \
