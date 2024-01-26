@@ -44,6 +44,7 @@ RUN \
 		gcc-aarch64-linux-gnu \
 		gcc-arm-linux-gnu \
 		gcc-c++ \
+		gdb \
 		git \
 		git-absorb \
 		git-email \
@@ -52,8 +53,10 @@ RUN \
 		isync \
 		lei \
 		lld \
+		lldb \
 		make \
 		meson \
+		mold \
 		msmtp \
 		ncurses-devel \
 		neomutt \
@@ -62,6 +65,7 @@ RUN \
 		osbuild \
 		osbuild-tools \
 		patch \
+		perf \
 		picocom \
 		podman-remote \
 		python-cryptography \
