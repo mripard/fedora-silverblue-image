@@ -66,6 +66,7 @@ RUN \
 		osbuild-tools \
 		patch \
 		perf \
+		perl-open \
 		picocom \
 		podman-remote \
 		python-cryptography \
