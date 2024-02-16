@@ -23,7 +23,7 @@ jobs:
     name: Build and push image
     runs-on: ubuntu-22.04
     container:
-      image: fedora:38
+      image: fedora-minimal:38
       options: --privileged
 
     steps:
