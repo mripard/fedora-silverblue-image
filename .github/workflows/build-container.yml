@@ -22,13 +22,13 @@ jobs:
   build:
     name: Build and push image
     runs-on: ubuntu-22.04
-    container:
-      image: fedora-minimal:38
-      options: --privileged
 
     steps:
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
+
       - name: Install Packages
-        run: sudo dnf install -y buildah podman sqlite
+        run: sudo apt install -y buildah podman sqlite
 
       - uses: actions/checkout@v2
 
@@ -38,14 +38,12 @@ jobs:
         with:
           image: ${{ env.IMAGE_NAME }}
           tags: ${{ env.IMAGE_TAGS }}
-          extra-args: |
-            --isolation=chroot
           containerfiles: |
             ./Containerfile
 
       - name: Check RPMDb Integrity
         run: |
-          sudo podman run --rm --cgroups=disabled \
+          podman run --rm \
             ${{ steps.build-image.outputs.image }}:${{ github.sha }} \
             sqlite3 /usr/share/rpm/rpmdb.sqlite 'PRAGMA integrity_check;'
 
