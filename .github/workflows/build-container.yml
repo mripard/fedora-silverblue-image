@@ -6,58 +6,54 @@ on:
     branches:
       - main
   schedule:
-    - cron: '20 02 * * *'
+    - cron: "20 02 * * *"
 
 permissions:
   packages: write
 
 env:
-    IMAGE_NAME: fedora-silverblue-image
-    IMAGE_TAGS: latest ${{ github.sha }}
-    REGISTRY_URL: ghcr.io/${{ github.repository_owner }}
-    REGISTRY_USER: ${{ github.actor }}
-    REGISTRY_PASSWORD: ${{ github.token }}
+  IMAGE_NAME: fedora-silverblue-image
+  IMAGE_TAGS: latest ${{ github.sha }}
+  REGISTRY_URL: ghcr.io/${{ github.repository_owner }}
+  REGISTRY_USER: ${{ github.actor }}
+  REGISTRY_PASSWORD: ${{ github.token }}
 
 jobs:
   build:
     name: Build and push image
     runs-on: ubuntu-22.04
-    container:
-      image: fedora:38
-      options: --privileged
 
     steps:
-    - name: Install Packages
-      run: sudo dnf install -y buildah podman sqlite
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
 
-    - uses: actions/checkout@v2
+      - name: Install Packages
+        run: sudo apt install -y buildah podman sqlite
 
-    - name: Build Image
-      id: build-image
-      uses: redhat-actions/buildah-build@v2
-      with:
-        image: ${{ env.IMAGE_NAME }}
-        tags: ${{ env.IMAGE_TAGS }}
-        extra-args: |
-          --isolation=chroot
-        containerfiles: |
-          ./Containerfile
+      - uses: actions/checkout@v2
 
-    - name: Check RPMDb Integrity
-      run: |
-        sudo podman run --rm --cgroups=disabled \
-          ${{ steps.build-image.outputs.image }}:${{ github.sha }} \
-          tar -C /usr/share/rpm -cf - . | tar xvf -
-        sqlite3 rpmdb.sqlite 'PRAGMA integrity_check;'
+      - name: Build Image
+        id: build-image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          image: ${{ env.IMAGE_NAME }}
+          tags: ${{ env.IMAGE_TAGS }}
+          containerfiles: |
+            ./Containerfile
 
-    - name: Push To Github Packages Registry
-      id: push-to-gh
-      uses: redhat-actions/push-to-registry@v2
-      if: github.event_name != 'pull_request'
-      with:
-        image: ${{ steps.build-image.outputs.image }}
-        tags: ${{ steps.build-image.outputs.tags }}
-        registry: ${{ env.REGISTRY_URL }}
-        username: ${{ env.REGISTRY_USER }}
-        password: ${{ env.REGISTRY_PASSWORD }}
+      - name: Check RPMDb Integrity
+        run: |
+          podman run --rm \
+            ${{ steps.build-image.outputs.image }}:${{ github.sha }} \
+            sqlite3 /usr/share/rpm/rpmdb.sqlite 'PRAGMA integrity_check;'
 
+      - name: Push To Github Packages Registry
+        id: push-to-gh
+        uses: redhat-actions/push-to-registry@v2
+        if: github.event_name != 'pull_request'
+        with:
+          image: ${{ steps.build-image.outputs.image }}
+          tags: ${{ steps.build-image.outputs.tags }}
+          registry: ${{ env.REGISTRY_URL }}
+          username: ${{ env.REGISTRY_USER }}
+          password: ${{ env.REGISTRY_PASSWORD }}
