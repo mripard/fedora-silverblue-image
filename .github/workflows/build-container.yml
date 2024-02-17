@@ -47,8 +47,7 @@ jobs:
         run: |
           sudo podman run --rm --cgroups=disabled \
             ${{ steps.build-image.outputs.image }}:${{ github.sha }} \
-            tar -C /usr/share/rpm -cf - . | tar xvf -
-          sqlite3 rpmdb.sqlite 'PRAGMA integrity_check;'
+            sqlite3 /usr/share/rpm/rpmdb.sqlite 'PRAGMA integrity_check;'
 
       - name: Push To Github Packages Registry
         id: push-to-gh
