@@ -22,11 +22,13 @@ RUN \
 		firefox-langpacks \
 	&& \
 	rpm-ostree -y install \
+		ansible \
 		autoconf \
 		automake \
 		b4 \
 		bison \
 		clang-devel \
+		cmake \
 		coccinelle \
 		containernetworking-plugins \
 		cpio \
