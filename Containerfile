@@ -52,7 +52,7 @@ RUN \
 		git-email \
 		git-filter-repo \
 		glibc-devel \
-		glibc-devel.i386 \
+		glibc-devel.i686 \
 		htop \
 		isync \
 		lei \
