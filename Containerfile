@@ -51,6 +51,8 @@ RUN \
 		git-absorb \
 		git-email \
 		git-filter-repo \
+		glibc-devel \
+		glibc-devel.i386 \
 		htop \
 		isync \
 		lei \
