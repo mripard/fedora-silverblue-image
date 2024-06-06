@@ -53,6 +53,7 @@ RUN \
 		git-filter-repo \
 		glibc-devel \
 		glibc-devel.i686 \
+		gnome-tweaks \
 		htop \
 		isync \
 		lei \
