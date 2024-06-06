@@ -71,6 +71,9 @@ RUN \
 		osbuild-tools \
 		patch \
 		perf \
+		perl-English \
+		perl-FindBin \
+		perl-IPC-Cmd \
 		perl-open \
 		picocom \
 		podman-remote \
