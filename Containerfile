@@ -83,6 +83,8 @@ RUN \
 		python3-pip \
 		python-pyelftools \
 		python-setuptools \
+		python-sphinx \
+		python-sphinx_rtd_theme \
 		qemu \
 		restic \
 		ripgrep \
