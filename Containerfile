@@ -40,7 +40,7 @@ RUN \
 		dwarves \
 		edid-decode \
 		elfutils-libelf-devel \
-		emacs \
+		emacs-nw \
 		flex \
 		gcc \
 		gcc-aarch64-linux-gnu \
