@@ -41,6 +41,7 @@ RUN \
 		edid-decode \
 		elfutils-libelf-devel \
 		emacs-nw \
+		fedpkg \
 		flex \
 		gcc \
 		gcc-aarch64-linux-gnu \
