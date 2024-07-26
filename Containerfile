@@ -4,6 +4,7 @@ FROM quay.io/fedora-ostree-desktops/silverblue:${FEDORA_MAJOR_VERSION}
 
 ARG FEDORA_MAJOR_VERSION
 
+COPY etc /etc
 COPY usr /usr
 
 RUN \
@@ -30,6 +31,7 @@ RUN \
 		clang-devel \
 		cmake \
 		coccinelle \
+		code \
 		containernetworking-plugins \
 		cpio \
 		did \
