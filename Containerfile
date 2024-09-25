@@ -46,16 +46,6 @@ RUN \
 		elfutils-libelf-devel \
 		emacs-nw \
 		f${FEDORA_MAJOR_VERSION}-backgrounds \
-		f${FEDORA_MAJOR_VERSION}-backgrounds-base \
-		f${FEDORA_MAJOR_VERSION}-backgrounds-extras-base \
-		f${FEDORA_MAJOR_VERSION}-backgrounds-extras-gnome \
-		f${FEDORA_MAJOR_VERSION}-backgrounds-extras-kde \
-		f${FEDORA_MAJOR_VERSION}-backgrounds-extras-mate \
-		f${FEDORA_MAJOR_VERSION}-backgrounds-extras-xfce \
-		f${FEDORA_MAJOR_VERSION}-backgrounds-gnome \
-		f${FEDORA_MAJOR_VERSION}-backgrounds-kde \
-		f${FEDORA_MAJOR_VERSION}-backgrounds-mate \
-		f${FEDORA_MAJOR_VERSION}-backgrounds-xfce \
 		fedpkg \
 		flex \
 		gcc \
@@ -69,6 +59,7 @@ RUN \
 		git-filter-repo \
 		glibc-devel \
 		glibc-devel.i686 \
+		gnome-backgrounds-extras \
 		gnome-tweaks \
 		htop \
 		isync \
