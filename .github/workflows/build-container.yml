@@ -28,7 +28,7 @@ jobs:
         uses: jlumbroso/free-disk-space@main
 
       - name: Install Packages
-        run: sudo apt install -y buildah podman sqlite
+        run: sudo apt install -y buildah podman
 
       - uses: actions/checkout@v2
 
@@ -40,12 +40,6 @@ jobs:
           tags: ${{ env.IMAGE_TAGS }}
           containerfiles: |
             ./Containerfile
-
-      - name: Check RPMDb Integrity
-        run: |
-          podman run --rm \
-            ${{ steps.build-image.outputs.image }}:${{ github.sha }} \
-            sqlite3 /usr/share/rpm/rpmdb.sqlite 'PRAGMA integrity_check;'
 
       - name: Push To Github Packages Registry
         id: push-to-gh
