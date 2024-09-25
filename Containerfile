@@ -86,6 +86,7 @@ RUN \
 		osbuild \
 		osbuild-tools \
 		patch \
+		pdftk \
 		perf \
 		perl-English \
 		perl-FindBin \
