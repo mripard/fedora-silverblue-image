@@ -74,6 +74,7 @@ RUN \
 		neomutt \
 		openssl \
 		openssl-devel \
+		openssl-devel-engine \
 		osbuild \
 		osbuild-tools \
 		patch \
