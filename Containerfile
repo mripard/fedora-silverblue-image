@@ -53,6 +53,7 @@ RUN \
 		gcc-arm-linux-gnu \
 		gcc-c++ \
 		gdb \
+		gh \
 		git \
 		git-absorb \
 		git-email \
