@@ -63,6 +63,7 @@ RUN \
 		gnome-backgrounds-extras \
 		gnome-tweaks \
 		htop \
+		ibm-plex-fonts-all \
 		isync \
 		lei \
 		lld \
