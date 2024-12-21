@@ -86,6 +86,7 @@ RUN \
 		perl-IPC-Cmd \
 		perl-open \
 		picocom \
+		polarsys-b612-fonts-all \
 		podman-remote \
 		python-cryptography \
 		python-devel \
