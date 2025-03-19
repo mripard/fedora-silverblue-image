@@ -62,6 +62,7 @@ RUN \
 		glibc-devel.i686 \
 		gnome-backgrounds-extras \
 		gnome-tweaks \
+		go \
 		htop \
 		ibm-plex-fonts-all \
 		isync \
