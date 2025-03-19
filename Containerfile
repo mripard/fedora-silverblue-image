@@ -114,6 +114,7 @@ RUN \
 		weechat \
 		wireshark \
 		wl-clipboard \
+		yq \
 		zed-preview \
 	&& \
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo \
