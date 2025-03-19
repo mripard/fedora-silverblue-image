@@ -63,10 +63,13 @@ RUN \
 		gnome-backgrounds-extras \
 		gnome-tweaks \
 		go \
+		guestfs-tools \
 		htop \
 		ibm-plex-fonts-all \
 		isync \
 		lei \
+		libvirt-daemon-config-network \
+		libvirt-daemon-kvm \
 		lld \
 		lldb \
 		llvm \
@@ -100,6 +103,7 @@ RUN \
 		python-sphinx \
 		python-sphinx_rtd_theme \
 		qemu \
+		qemu-kvm \
 		restic \
 		ripgrep \
 		rpmdevtools \
@@ -116,6 +120,10 @@ RUN \
 		wl-clipboard \
 		yq \
 		zed-preview \
+		virt-install \
+		virt-manager \
+		virt-top \
+		virt-viewer \
 	&& \
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo \
 	&& \
