@@ -125,6 +125,8 @@ RUN \
 		virt-top \
 		virt-viewer \
 	&& \
+	systemctl enable libvirtd.service \
+	&& \
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo \
 	&& \
 	sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf \
