@@ -112,6 +112,7 @@ RUN \
 		tailscale \
 		terra-release \
 		uboot-tools \
+		uv \
 		v4l-utils \
 		vim-enhanced \
 		w3m \
