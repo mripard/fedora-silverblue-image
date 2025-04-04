@@ -11,6 +11,7 @@ RUN \
 	rpm-ostree -y install \
 		distrobox \
 		git \
+		google-chrome-stable \
 		vim-enhanced \
 		virt-install \
 		virt-manager \
