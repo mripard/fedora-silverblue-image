@@ -6,6 +6,7 @@ ARG FEDORA_MAJOR_VERSION
 
 COPY etc /etc
 COPY usr /usr
+COPY opt /opt
 
 RUN \
 	rpm-ostree -y install \
