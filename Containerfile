@@ -10,8 +10,10 @@ COPY opt /opt
 
 RUN \
 	rpm-ostree -y install \
+		code \
 		distrobox \
 		git \
+		podman-compose \
 		vim-enhanced \
 		virt-install \
 		virt-manager \
