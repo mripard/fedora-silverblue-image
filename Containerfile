@@ -14,6 +14,7 @@ RUN \
 		distrobox \
 		git \
 		podman-compose \
+		python3-ramalama \
 		vim-enhanced \
 		virt-install \
 		virt-manager \
