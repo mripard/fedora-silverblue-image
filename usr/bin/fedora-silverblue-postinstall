@@ -17,8 +17,6 @@ flatpak install -y flathub com.dropbox.Client
 mkdir ~/.config/autostart
 ln -s /var/lib/flatpak/exports/share/applications/com.dropbox.Client.desktop ~/.config/autostart/com.dropbox.Client.desktop
 
-# Visual Studio Code - Code editing. Redefined.
-flatpak install -y flathub com.visualstudio.code
 # Obisdian - Markdown-based knowledge base
 flatpak install -y flathub md.obsidian.Obsidian
 # Inkscape - Vector Graphics Editor
