@@ -25,3 +25,5 @@ flatpak install -y fedora org.inkscape.Inkscape
 flatpak install -y fedora org.gimp.GIMP
 # Videos - Play movies
 flatpak install -y flathub org.gnome.Totem
+# Podman Desktop - Manage Podman and other container engines from a single UI
+flatpak install -y io.podman_desktop.PodmanDesktop
