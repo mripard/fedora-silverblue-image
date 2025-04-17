@@ -87,6 +87,7 @@ RUN \
 		patch \
 		pdftk \
 		perf \
+		perl \
 		perl-English \
 		perl-FindBin \
 		perl-IPC-Cmd \
