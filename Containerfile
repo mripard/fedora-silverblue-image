@@ -15,6 +15,7 @@ RUN \
 		git \
 		podman-compose \
 		python3-ramalama \
+		qemu-system-aarch64 \
 		vim-enhanced \
 		virt-install \
 		virt-manager \
