@@ -6,6 +6,9 @@ git config --global core.editor vim
 git config --global alias.tag-fromlist "-c core.editor=\"sed -i '1s/^/FROMLIST: /'\" -c sequence.editor=vim rebase -i"
 git config --global alias.tag-fromgit "-c core.editor=\"sed -i '1s/^/FROMGIT: /'\" -c sequence.editor=vim rebase -i"
 
+# Disable the annoying "Application not responding" timeout
+gsettings set org.gnome.mutter check-alive-timeout 0
+
 # Layered Packages
 #   Google Chrome
 sudo rpm-ostree install google-chrome-stable
