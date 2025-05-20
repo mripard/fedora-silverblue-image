@@ -62,6 +62,7 @@ RUN \
 		glibc-devel.i686 \
 		gnome-backgrounds-extras \
 		gnome-tweaks \
+		gnutls-devel \
 		go \
 		guestfs-tools \
 		htop \
@@ -89,9 +90,11 @@ RUN \
 		perf \
 		perl \
 		perl-English \
+		perl-ExtUtils-MakeMaker \
 		perl-FindBin \
 		perl-IPC-Cmd \
 		perl-open \
+		pgp-tools \
 		picocom \
 		polarsys-b612-fonts-all \
 		podman-remote \
@@ -119,6 +122,7 @@ RUN \
 		weechat \
 		wireshark \
 		wl-clipboard \
+		yamllint \
 		yq \
 		zed-preview \
 		virt-install \
