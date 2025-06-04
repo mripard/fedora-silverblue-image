@@ -60,7 +60,7 @@ RUN \
 		git-filter-repo \
 		glibc-devel \
 		glibc-devel.i686 \
-		gnome-backgrounds-extras \
+		gnome-backgrounds \
 		gnome-tweaks \
 		gnutls-devel \
 		go \
