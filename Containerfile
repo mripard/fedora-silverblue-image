@@ -111,6 +111,7 @@ RUN \
 		restic \
 		ripgrep \
 		rpmdevtools \
+		rust2rpm \
 		strace \
 		swig \
 		tailscale \
