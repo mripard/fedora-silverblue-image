@@ -16,11 +16,27 @@ RUN \
 		podman-compose \
 		python3-ramalama \
 		qemu-system-aarch64 \
+		qemu-user-static \
 		vim-enhanced \
 		virt-install \
 		virt-manager \
 		virt-top \
 		virt-viewer
+
+# These packages for Automotive Stream Distribution development
+RUN \
+	rpm-ostree -y install \
+		automotive-image-builder \
+		make \
+		osbuild \
+		osbuild-auto \
+		osbuild-ostree \
+		osbuild-selinux \
+		osbuild-tools \
+		osbuild-luks2 \
+		osbuild-lvm2 \
+		python3-libselinux \
+		rsync
 
 RUN \
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
