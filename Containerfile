@@ -17,6 +17,7 @@ RUN \
 		python3-ramalama \
 		qemu-system-aarch64 \
 		qemu-user-static \
+		krb5-workstation \
 		vim-enhanced \
 		virt-install \
 		virt-manager \
