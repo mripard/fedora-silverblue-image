@@ -61,22 +61,3 @@ jobs:
       - name: Set built image tags
         id: set-tags
         run: echo "image_tags=${{ env.IMAGE_NAME }}-${{ matrix.arch }}:${{ github.sha }}" >> $GITHUB_OUTPUT
-
-  publish-manifest:
-    needs: build-multiarch
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Install Buildah
-        run: sudo apt-get install -y buildah
-
-      - name: Log in to GHCR
-        run: buildah login --username ${{ env.REGISTRY_USER }} --password ${{ env.REGISTRY_PASSWORD }} ${{ env.REGISTRY_URL }}
-
-      - name: Create and push multi-arch manifest
-        run: |
-          buildah manifest create ${{ env.IMAGE_NAME }}-manifest
-          buildah manifest add ${{ env.IMAGE_NAME }}-manifest docker://${{ env.REGISTRY_URL }}/${{ env.IMAGE_NAME }}-amd64:${{ github.sha }}
-          buildah manifest add ${{ env.IMAGE_NAME }}-manifest docker://${{ env.REGISTRY_URL }}/${{ env.IMAGE_NAME }}-arm64:${{ github.sha }}
-          buildah manifest push --all ${{ env.IMAGE_NAME }}-manifest docker://${{ env.REGISTRY_URL }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-          buildah manifest push --all ${{ env.IMAGE_NAME }}-manifest docker://${{ env.REGISTRY_URL }}/${{ env.IMAGE_NAME }}:latest
-
