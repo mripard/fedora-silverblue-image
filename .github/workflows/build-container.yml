@@ -1,4 +1,4 @@
-name: Build and Publish Containers
+name: Build and Publish multi-arch Containers
 
 on:
   pull_request:
@@ -13,7 +13,7 @@ permissions:
   packages: write
 
 jobs:
-  build:
+  build-multiarch:
     name: Build and push image
     runs-on: ubuntu-22.04
     strategy:
@@ -43,19 +43,40 @@ jobs:
         id: build-image
         uses: redhat-actions/buildah-build@v2
         with:
-          image: ${{ env.IMAGE_NAME }}
+          image: ${{ env.IMAGE_NAME }}-${{ matrix.arch }}
           tags: ${{ env.IMAGE_TAGS }}
           containerfiles: |
             ./Containerfile
           platforms: linux/${{ matrix.arch }}
 
-      - name: Push To Github Packages Registry
-        id: push-to-gh
+      - name: Push Image
         uses: redhat-actions/push-to-registry@v2
-        if: github.event_name != 'pull_request'
         with:
-          image: ${{ steps.build-image.outputs.image }}
-          tags: ${{ steps.build-image.outputs.tags }}
+          image: ${{ env.IMAGE_NAME }}-${{ matrix.arch }}
+          tags: ${{ github.sha }}
           registry: ${{ env.REGISTRY_URL }}
           username: ${{ env.REGISTRY_USER }}
           password: ${{ env.REGISTRY_PASSWORD }}
+
+      - name: Set built image tags
+        id: set-tags
+        run: echo "image_tags=${{ env.IMAGE_NAME }}-${{ matrix.arch }}:${{ github.sha }}" >> $GITHUB_OUTPUT
+
+  publish-manifest:
+    needs: build-multiarch
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Install Buildah
+        run: sudo apt-get install -y buildah
+
+      - name: Log in to GHCR
+        run: buildah login --username ${{ env.REGISTRY_USER }} --password ${{ env.REGISTRY_PASSWORD }} ${{ env.REGISTRY_URL }}
+
+      - name: Create and push multi-arch manifest
+        run: |
+          buildah manifest create ${{ env.IMAGE_NAME }}-manifest
+          buildah manifest add ${{ env.IMAGE_NAME }}-manifest docker://${{ env.REGISTRY_URL }}/${{ env.IMAGE_NAME }}-amd64:${{ github.sha }}
+          buildah manifest add ${{ env.IMAGE_NAME }}-manifest docker://${{ env.REGISTRY_URL }}/${{ env.IMAGE_NAME }}-arm64:${{ github.sha }}
+          buildah manifest push --all ${{ env.IMAGE_NAME }}-manifest docker://${{ env.REGISTRY_URL }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          buildah manifest push --all ${{ env.IMAGE_NAME }}-manifest docker://${{ env.REGISTRY_URL }}/${{ env.IMAGE_NAME }}:latest
+
