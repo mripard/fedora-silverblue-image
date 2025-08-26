@@ -53,7 +53,7 @@ jobs:
         uses: redhat-actions/push-to-registry@v2
         with:
           image: ${{ env.IMAGE_NAME }}-${{ matrix.arch }}
-          tags: ${{ github.sha }}
+          tags: ${{ env.IMAGE_TAGS }}
           registry: ${{ env.REGISTRY_URL }}
           username: ${{ env.REGISTRY_USER }}
           password: ${{ env.REGISTRY_PASSWORD }}
