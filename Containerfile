@@ -25,6 +25,7 @@ RUN \
 		firefox-langpacks \
 	&& \
 	rpm-ostree -y install \
+		android-tools \
 		ansible \
 		autoconf \
 		automake \
@@ -43,6 +44,7 @@ RUN \
 		dtc \
 		dwarves \
 		edid-decode \
+		elfutils-devel \
 		elfutils-libelf-devel \
 		emacs-nw \
 		f${FEDORA_MAJOR_VERSION}-backgrounds \
