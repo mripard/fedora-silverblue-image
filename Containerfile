@@ -130,6 +130,7 @@ RUN \
 		virt-manager \
 		virt-top \
 		virt-viewer \
+		vhs \
 	&& \
 	systemctl enable libvirtd.service \
 	&& \
