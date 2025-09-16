@@ -15,7 +15,7 @@ permissions:
 jobs:
   build-multiarch:
     name: Build and push image
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         arch: [amd64, arm64] # amd64 = x86_64, arm64 = aarch64
