@@ -31,6 +31,9 @@ jobs:
       - name: Free Disk Space (Ubuntu)
         uses: jlumbroso/free-disk-space@main
 
+      - name:  Download latest package list from the repositories
+        run: sudo apt update
+
       - name: Install Packages
         run: sudo apt install -y buildah podman qemu-user-static
 
