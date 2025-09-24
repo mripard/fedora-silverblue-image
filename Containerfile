@@ -28,6 +28,7 @@ RUN \
 RUN \
 	rpm-ostree -y install \
 		automotive-image-builder \
+		jq \
 		make \
 		osbuild \
 		osbuild-auto \
