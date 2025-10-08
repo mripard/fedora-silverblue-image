@@ -114,6 +114,7 @@ RUN \
 		ripgrep \
 		rpmdevtools \
 		rust2rpm \
+		screen \
 		strace \
 		swig \
 		tailscale \
