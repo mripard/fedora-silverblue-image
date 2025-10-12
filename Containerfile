@@ -14,8 +14,6 @@ RUN \
 	&& \
 	wget -O /etc/yum.repos.d/tailscale.repo https://pkgs.tailscale.com/stable/fedora/tailscale.repo \
 	&& \
-	wget -O /etc/yum.repos.d/terra.repo https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo \
-	&& \
 	wget -P /etc/udev/rules.d/ https://raw.githubusercontent.com/Nitrokey/libnitrokey/master/data/41-nitrokey.rules \
 	&& \
 	rpm-ostree override remove mesa-va-drivers --install mesa-va-drivers-freeworld \
@@ -118,7 +116,6 @@ RUN \
 		strace \
 		swig \
 		tailscale \
-		terra-release \
 		uboot-tools \
 		v4l-utils \
 		vim-enhanced \
@@ -128,7 +125,6 @@ RUN \
 		wl-clipboard \
 		yamllint \
 		yq \
-		zed-preview \
 		virt-install \
 		virt-manager \
 		virt-top \
