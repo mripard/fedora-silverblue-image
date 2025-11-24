@@ -26,6 +26,7 @@ RUN \
 		autoconf \
 		automake \
 		b4 \
+		bat \
 		bison \
 		clang-devel \
 		cmake \
@@ -43,7 +44,9 @@ RUN \
 		elfutils-devel \
 		elfutils-libelf-devel \
 		emacs-nw \
+		eza \
 		f${FEDORA_MAJOR_VERSION}-backgrounds \
+		fd-find \
 		fedpkg \
 		flex \
 		gcc \
