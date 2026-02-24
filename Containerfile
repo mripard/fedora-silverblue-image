@@ -27,6 +27,7 @@ RUN \
 		automake \
 		b4 \
 		bat \
+		binwalk \
 		bison \
 		clang-devel \
 		cmake \
@@ -39,6 +40,7 @@ RUN \
 		dfu-util \
 		drm-utils \
 		dtc \
+		dt-schema \
 		dwarves \
 		edid-decode \
 		elfutils-devel \
@@ -64,6 +66,7 @@ RUN \
 		gnome-tweaks \
 		gnutls-devel \
 		go \
+		google-cloud-cli \
 		guestfs-tools \
 		htop \
 		ibm-plex-fonts-all \
@@ -103,6 +106,7 @@ RUN \
 		python-jsonschema \
 		python3-pip \
 		python-pyelftools \
+		python-pytest \
 		python-setuptools \
 		python-sphinx \
 		python-sphinx_rtd_theme \
