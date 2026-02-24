@@ -117,6 +117,7 @@ RUN \
 		rpmdevtools \
 		rust2rpm \
 		screen \
+		shellcheck \
 		strace \
 		swig \
 		tailscale \
