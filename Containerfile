@@ -66,7 +66,6 @@ RUN \
 		gnome-tweaks \
 		gnutls-devel \
 		go \
-		google-cloud-cli \
 		guestfs-tools \
 		htop \
 		ibm-plex-fonts-all \
