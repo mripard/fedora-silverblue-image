@@ -1,4 +1,4 @@
-ARG FEDORA_MAJOR_VERSION=43
+ARG FEDORA_MAJOR_VERSION=44
 
 FROM quay.io/fedora-ostree-desktops/silverblue:${FEDORA_MAJOR_VERSION}
 
@@ -14,11 +14,11 @@ RUN \
 	&& \
 	wget -P /etc/udev/rules.d/ https://raw.githubusercontent.com/Nitrokey/libnitrokey/master/data/41-nitrokey.rules \
 	&& \
-	rpm-ostree override remove mesa-va-drivers --install mesa-va-drivers-freeworld \
-	&& \
 	rpm-ostree override remove \
 		firefox \
 		firefox-langpacks \
+	&& \
+	dnf -y copr enable siosm/rust-git-absorb \
 	&& \
 	rpm-ostree -y install \
 		android-tools \
@@ -78,6 +78,7 @@ RUN \
 		lldb \
 		llvm \
 		make \
+		mesa-va-drivers-freeworld \
 		meson \
 		mold \
 		msmtp \
