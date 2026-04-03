@@ -31,7 +31,6 @@ RUN \
 		bison \
 		chezmoi \
 		clang-devel \
-		clippy \
 		cmake \
 		coccinelle \
 		code \
@@ -121,9 +120,7 @@ RUN \
 		restic \
 		ripgrep \
 		rpmdevtools \
-		rust-analyzer \
 		rust2rpm \
-		rustfmt \
 		rustup \
 		screen \
 		shellcheck \
