@@ -29,7 +29,9 @@ RUN \
 		bat \
 		binwalk \
 		bison \
+		chezmoi \
 		clang-devel \
+		clippy \
 		cmake \
 		coccinelle \
 		code \
@@ -60,6 +62,7 @@ RUN \
 		git-absorb \
 		git-email \
 		git-filter-repo \
+		glab \
 		glibc-devel \
 		glibc-devel.i686 \
 		gnome-backgrounds \
@@ -102,19 +105,26 @@ RUN \
 		podman-remote \
 		python-cryptography \
 		python-devel \
+		python-jinja2-cli \
 		python-jsonschema \
-		python3-pip \
 		python-pyelftools \
+		python-pyserial \
 		python-pytest \
+		python-tox \
 		python-setuptools \
 		python-sphinx \
 		python-sphinx_rtd_theme \
+		python-virtualenv \
 		qemu \
 		qemu-kvm \
+		repo \
 		restic \
 		ripgrep \
 		rpmdevtools \
+		rust-analyzer \
 		rust2rpm \
+		rustfmt \
+		rustup \
 		screen \
 		shellcheck \
 		strace \
