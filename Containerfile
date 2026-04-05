@@ -103,17 +103,12 @@ RUN \
 		polarsys-b612-fonts-all \
 		podman-remote \
 		python-cryptography \
-		python-devel \
 		python-jinja2-cli \
 		python-jsonschema \
 		python-pyelftools \
 		python-pyserial \
-		python-pytest \
-		python-tox \
-		python-setuptools \
 		python-sphinx \
 		python-sphinx_rtd_theme \
-		python-virtualenv \
 		qemu \
 		qemu-kvm \
 		repo \
