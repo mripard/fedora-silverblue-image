@@ -22,7 +22,6 @@ RUN \
 	&& \
 	rpm-ostree -y install \
 		android-tools \
-		ansible \
 		autoconf \
 		automake \
 		b4 \
@@ -115,7 +114,6 @@ RUN \
 		restic \
 		ripgrep \
 		rpmdevtools \
-		rust2rpm \
 		rustup \
 		screen \
 		shellcheck \
@@ -135,7 +133,6 @@ RUN \
 		virt-manager \
 		virt-top \
 		virt-viewer \
-		vhs \
 	&& \
 	systemctl enable libvirtd.service \
 	&& \
