@@ -18,8 +18,6 @@ RUN \
 		firefox \
 		firefox-langpacks \
 	&& \
-	dnf -y copr enable siosm/rust-git-absorb \
-	&& \
 	rpm-ostree -y install \
 		android-tools \
 		autoconf \
