@@ -114,7 +114,6 @@ RUN \
 		ripgrep \
 		rpmdevtools \
 		rustup \
-		screen \
 		shellcheck \
 		strace \
 		swig \
