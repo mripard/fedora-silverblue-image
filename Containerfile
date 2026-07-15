@@ -123,7 +123,6 @@ RUN \
 		v4l-utils \
 		vim-enhanced \
 		w3m \
-		weechat \
 		wireshark \
 		wl-clipboard \
 		yamllint \
