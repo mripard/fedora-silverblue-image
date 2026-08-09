@@ -62,6 +62,7 @@ RUN \
 		glibc-devel \
 		glibc-devel.i686 \
 		gnome-backgrounds \
+		gnome-shell-extension-appindicator \
 		gnome-tweaks \
 		gnutls-devel \
 		go \
