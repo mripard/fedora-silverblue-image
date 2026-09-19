@@ -131,6 +131,7 @@ RUN \
 		virt-manager \
 		virt-top \
 		virt-viewer \
+		virtme-ng \
 	&& \
 	systemctl enable libvirtd.service \
 	&& \
