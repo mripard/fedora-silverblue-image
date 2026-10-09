@@ -105,6 +105,7 @@ RUN \
 		python-cryptography \
 		python-jinja2-cli \
 		python-jsonschema \
+		python-ply \
 		python-pyelftools \
 		python-pyserial \
 		python-sphinx \
