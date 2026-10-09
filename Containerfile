@@ -68,6 +68,7 @@ RUN \
 		go \
 		guestfs-tools \
 		htop \
+		hugo \
 		ibm-plex-fonts-all \
 		isync \
 		lei \
