@@ -1,4 +1,4 @@
-ARG FEDORA_MAJOR_VERSION=44
+ARG FEDORA_MAJOR_VERSION=45
 
 FROM quay.io/fedora-ostree-desktops/silverblue:${FEDORA_MAJOR_VERSION}
 
@@ -8,7 +8,11 @@ COPY etc /etc
 COPY usr /usr
 
 RUN \
-	rpm-ostree install \
+	rpmkeys --import \
+		/usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-free-fedora-${FEDORA_MAJOR_VERSION} \
+		/usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-nonfree-fedora-${FEDORA_MAJOR_VERSION} \
+	&& \
+	rpm-ostree -y install \
 		https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-${FEDORA_MAJOR_VERSION}.noarch.rpm \
 		https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${FEDORA_MAJOR_VERSION}.noarch.rpm \
 	&& \
@@ -84,8 +88,8 @@ RUN \
 		ncurses-devel \
 		neomutt \
 		openssl \
-		openssl-devel \
-		openssl-devel-engine \
+		openssl3-devel \
+		openssl3-devel-engine \
 		osbuild \
 		osbuild-tools \
 		patch \
