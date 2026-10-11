@@ -60,7 +60,6 @@ RUN \
 		git-filter-repo \
 		glab \
 		glibc-devel \
-		glibc-devel.i686 \
 		gnome-backgrounds \
 		gnome-shell-extension-appindicator \
 		gnome-tweaks \
